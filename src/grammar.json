@@ -19939,6 +19939,74 @@
                       },
                       {
                         "type": "STRING",
+                        "value": "DECLARE_MULTICAST_DELEGATE_ThreeParams"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_MULTICAST_DELEGATE_FourParams"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_MULTICAST_DELEGATE_FiveParams"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_MULTICAST_DELEGATE_SixParams"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_MULTICAST_DELEGATE_SevenParams"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_MULTICAST_DELEGATE_EightParams"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_MULTICAST_DELEGATE_NineParams"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_TS_MULTICAST_DELEGATE"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_TS_MULTICAST_DELEGATE_OneParam"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_TS_MULTICAST_DELEGATE_TwoParams"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_TS_MULTICAST_DELEGATE_ThreeParams"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_TS_MULTICAST_DELEGATE_FourParams"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_TS_MULTICAST_DELEGATE_FiveParams"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_TS_MULTICAST_DELEGATE_SixParams"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_TS_MULTICAST_DELEGATE_SevenParams"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_TS_MULTICAST_DELEGATE_EightParams"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_TS_MULTICAST_DELEGATE_NineParams"
+                      },
+                      {
+                        "type": "STRING",
                         "value": "DECLARE_DYNAMIC_DELEGATE"
                       },
                       {
@@ -19951,11 +20019,111 @@
                       },
                       {
                         "type": "STRING",
+                        "value": "DECLARE_DYNAMIC_DELEGATE_RetVal_OneParam"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_DYNAMIC_DELEGATE_TwoParams"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_DYNAMIC_DELEGATE_RetVal_TwoParams"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_DYNAMIC_DELEGATE_ThreeParams"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_DYNAMIC_DELEGATE_RetVal_ThreeParams"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_DYNAMIC_DELEGATE_FourParams"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_DYNAMIC_DELEGATE_RetVal_FourParams"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_DYNAMIC_DELEGATE_FiveParams"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_DYNAMIC_DELEGATE_RetVal_FiveParams"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_DYNAMIC_DELEGATE_SixParams"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_DYNAMIC_DELEGATE_RetVal_SixParams"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_DYNAMIC_DELEGATE_SevenParams"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_DYNAMIC_DELEGATE_RetVal_SevenParams"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_DYNAMIC_DELEGATE_EightParams"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_DYNAMIC_DELEGATE_RetVal_EightParams"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_DYNAMIC_DELEGATE_NineParams"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_DYNAMIC_DELEGATE_RetVal_NineParams"
+                      },
+                      {
+                        "type": "STRING",
                         "value": "DECLARE_DYNAMIC_MULTICAST_DELEGATE"
                       },
                       {
                         "type": "STRING",
                         "value": "DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_DYNAMIC_MULTICAST_DELEGATE_FourParams"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_DYNAMIC_MULTICAST_DELEGATE_FiveParams"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_DYNAMIC_MULTICAST_DELEGATE_SixParams"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_DYNAMIC_MULTICAST_DELEGATE_SevenParams"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_DYNAMIC_MULTICAST_DELEGATE_EightParams"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_DYNAMIC_MULTICAST_DELEGATE_NineParams"
                       },
                       {
                         "type": "STRING",
@@ -19983,11 +20151,59 @@
                       },
                       {
                         "type": "STRING",
+                        "value": "DECLARE_DYNAMIC_MULTICAST_SPARSE_DELEGATE_SixParams"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_DYNAMIC_MULTICAST_SPARSE_DELEGATE_SevenParams"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_DYNAMIC_MULTICAST_SPARSE_DELEGATE_EightParams"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_DYNAMIC_MULTICAST_SPARSE_DELEGATE_NineParams"
+                      },
+                      {
+                        "type": "STRING",
                         "value": "DECLARE_EVENT"
                       },
                       {
                         "type": "STRING",
-                        "value": "DECLARE_TS_MULTICAST_DELEGATE"
+                        "value": "DECLARE_EVENT_OneParam"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_EVENT_TwoParams"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_EVENT_ThreeParams"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_EVENT_FourParams"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_EVENT_FiveParams"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_EVENT_SixParams"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_EVENT_SevenParams"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_EVENT_EightParams"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "DECLARE_EVENT_NineParams"
                       },
                       {
                         "type": "STRING",

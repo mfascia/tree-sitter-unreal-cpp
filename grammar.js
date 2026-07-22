@@ -1961,7 +1961,20 @@ module.exports = grammar(C, {
       field('api', optional($.unreal_api_specifier)),
       field('name', alias(
         token(prec(10, choice(
-            'DECLARE_DELEGATE', 'DECLARE_DELEGATE_RetVal', 'DECLARE_DELEGATE_OneParam', 
+            // Every DECLARE_* delegate/event macro name is listed here as a
+            // literal, one per arity, rather than relying solely on the
+            // /DECLARE_[A-Z0-9_]+/ regex fallback below: a macro name only
+            // reachable through that fallback loses out to the ordinary
+            // C++ declaration grammar (which can always parse a
+            // comma-separated argument list as an anonymous-parameter
+            // function prototype) once the argument list is complex enough
+            // — confirmed live with DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams
+            // and DECLARE_MULTICAST_DELEGATE_ThreeParams, both previously
+            // regex-fallback-only, misparsing into an ERROR node instead of
+            // unreal_declaration_macro. Listing every arity explicitly, as
+            // DECLARE_DELEGATE* already was, removes the whole class of bug
+            // rather than fixing individual arities as they're reported.
+            'DECLARE_DELEGATE', 'DECLARE_DELEGATE_RetVal', 'DECLARE_DELEGATE_OneParam',
             'DECLARE_DELEGATE_RetVal_OneParam', 'DECLARE_DELEGATE_TwoParams', 'DECLARE_DELEGATE_RetVal_TwoParams',
             'DECLARE_DELEGATE_ThreeParams', 'DECLARE_DELEGATE_RetVal_ThreeParams', 'DECLARE_DELEGATE_FourParams',
             'DECLARE_DELEGATE_RetVal_FourParams', 'DECLARE_DELEGATE_FiveParams', 'DECLARE_DELEGATE_RetVal_FiveParams',
@@ -1969,13 +1982,42 @@ module.exports = grammar(C, {
             'DECLARE_DELEGATE_SevenParams', 'DECLARE_DELEGATE_RetVal_SevenParams',
             'DECLARE_DELEGATE_EightParams', 'DECLARE_DELEGATE_RetVal_EightParams',
             'DECLARE_DELEGATE_NineParams', 'DECLARE_DELEGATE_RetVal_NineParams',
+
             'DECLARE_MULTICAST_DELEGATE', 'DECLARE_MULTICAST_DELEGATE_OneParam', 'DECLARE_MULTICAST_DELEGATE_TwoParams',
+            'DECLARE_MULTICAST_DELEGATE_ThreeParams', 'DECLARE_MULTICAST_DELEGATE_FourParams', 'DECLARE_MULTICAST_DELEGATE_FiveParams',
+            'DECLARE_MULTICAST_DELEGATE_SixParams', 'DECLARE_MULTICAST_DELEGATE_SevenParams',
+            'DECLARE_MULTICAST_DELEGATE_EightParams', 'DECLARE_MULTICAST_DELEGATE_NineParams',
+
+            'DECLARE_TS_MULTICAST_DELEGATE', 'DECLARE_TS_MULTICAST_DELEGATE_OneParam', 'DECLARE_TS_MULTICAST_DELEGATE_TwoParams',
+            'DECLARE_TS_MULTICAST_DELEGATE_ThreeParams', 'DECLARE_TS_MULTICAST_DELEGATE_FourParams', 'DECLARE_TS_MULTICAST_DELEGATE_FiveParams',
+            'DECLARE_TS_MULTICAST_DELEGATE_SixParams', 'DECLARE_TS_MULTICAST_DELEGATE_SevenParams',
+            'DECLARE_TS_MULTICAST_DELEGATE_EightParams', 'DECLARE_TS_MULTICAST_DELEGATE_NineParams',
+
             'DECLARE_DYNAMIC_DELEGATE', 'DECLARE_DYNAMIC_DELEGATE_RetVal', 'DECLARE_DYNAMIC_DELEGATE_OneParam',
+            'DECLARE_DYNAMIC_DELEGATE_RetVal_OneParam', 'DECLARE_DYNAMIC_DELEGATE_TwoParams', 'DECLARE_DYNAMIC_DELEGATE_RetVal_TwoParams',
+            'DECLARE_DYNAMIC_DELEGATE_ThreeParams', 'DECLARE_DYNAMIC_DELEGATE_RetVal_ThreeParams', 'DECLARE_DYNAMIC_DELEGATE_FourParams',
+            'DECLARE_DYNAMIC_DELEGATE_RetVal_FourParams', 'DECLARE_DYNAMIC_DELEGATE_FiveParams', 'DECLARE_DYNAMIC_DELEGATE_RetVal_FiveParams',
+            'DECLARE_DYNAMIC_DELEGATE_SixParams', 'DECLARE_DYNAMIC_DELEGATE_RetVal_SixParams',
+            'DECLARE_DYNAMIC_DELEGATE_SevenParams', 'DECLARE_DYNAMIC_DELEGATE_RetVal_SevenParams',
+            'DECLARE_DYNAMIC_DELEGATE_EightParams', 'DECLARE_DYNAMIC_DELEGATE_RetVal_EightParams',
+            'DECLARE_DYNAMIC_DELEGATE_NineParams', 'DECLARE_DYNAMIC_DELEGATE_RetVal_NineParams',
+
             'DECLARE_DYNAMIC_MULTICAST_DELEGATE', 'DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam',
+            'DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams', 'DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams',
+            'DECLARE_DYNAMIC_MULTICAST_DELEGATE_FourParams', 'DECLARE_DYNAMIC_MULTICAST_DELEGATE_FiveParams',
+            'DECLARE_DYNAMIC_MULTICAST_DELEGATE_SixParams', 'DECLARE_DYNAMIC_MULTICAST_DELEGATE_SevenParams',
+            'DECLARE_DYNAMIC_MULTICAST_DELEGATE_EightParams', 'DECLARE_DYNAMIC_MULTICAST_DELEGATE_NineParams',
+
             'DECLARE_DYNAMIC_MULTICAST_SPARSE_DELEGATE', 'DECLARE_DYNAMIC_MULTICAST_SPARSE_DELEGATE_OneParam',
             'DECLARE_DYNAMIC_MULTICAST_SPARSE_DELEGATE_TwoParams', 'DECLARE_DYNAMIC_MULTICAST_SPARSE_DELEGATE_ThreeParams',
             'DECLARE_DYNAMIC_MULTICAST_SPARSE_DELEGATE_FourParams', 'DECLARE_DYNAMIC_MULTICAST_SPARSE_DELEGATE_FiveParams',
-            'DECLARE_EVENT', 'DECLARE_TS_MULTICAST_DELEGATE',
+            'DECLARE_DYNAMIC_MULTICAST_SPARSE_DELEGATE_SixParams', 'DECLARE_DYNAMIC_MULTICAST_SPARSE_DELEGATE_SevenParams',
+            'DECLARE_DYNAMIC_MULTICAST_SPARSE_DELEGATE_EightParams', 'DECLARE_DYNAMIC_MULTICAST_SPARSE_DELEGATE_NineParams',
+
+            'DECLARE_EVENT', 'DECLARE_EVENT_OneParam', 'DECLARE_EVENT_TwoParams',
+            'DECLARE_EVENT_ThreeParams', 'DECLARE_EVENT_FourParams', 'DECLARE_EVENT_FiveParams',
+            'DECLARE_EVENT_SixParams', 'DECLARE_EVENT_SevenParams', 'DECLARE_EVENT_EightParams', 'DECLARE_EVENT_NineParams',
+
             'DEPRECATED_CHARACTER_MOVEMENT_RPC',
             /DECLARE_[A-Z0-9_]+/,
             'ENUM_CLASS_FLAGS',
