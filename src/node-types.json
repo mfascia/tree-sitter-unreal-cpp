@@ -1787,6 +1787,10 @@
           "named": true
         },
         {
+          "type": "unreal_declaration_macro",
+          "named": true
+        },
+        {
           "type": "unreal_pragma_macro",
           "named": true
         },
@@ -2338,6 +2342,10 @@
           "named": true
         },
         {
+          "type": "unreal_declaration_macro",
+          "named": true
+        },
+        {
           "type": "unreal_pragma_macro",
           "named": true
         },
@@ -2849,6 +2857,10 @@
         },
         {
           "type": "type_specifier",
+          "named": true
+        },
+        {
+          "type": "unreal_declaration_macro",
           "named": true
         },
         {

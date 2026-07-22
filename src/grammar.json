@@ -334,6 +334,14 @@
         {
           "type": "SYMBOL",
           "name": "unreal_pragma_macro"
+        },
+        {
+          "type": "PREC",
+          "value": 100,
+          "content": {
+            "type": "SYMBOL",
+            "name": "unreal_declaration_macro"
+          }
         }
       ]
     },

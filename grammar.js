@@ -216,6 +216,19 @@ module.exports = grammar(C, {
       // ▼▼▼ 追加: 関数内での PRAGMA マクロを許可 ▼▼▼
       $.unreal_pragma_macro,
       // ▲▲▲ 追加完了 ▲▲▲
+
+      // DECLARE_DELEGATE*/DECLARE_MULTICAST_DELEGATE*/DECLARE_DYNAMIC_DELEGATE*/
+      // DECLARE_DYNAMIC_MULTICAST_DELEGATE*/DECLARE_EVENT*/
+      // DECLARE_TS_MULTICAST_DELEGATE: _block_item governs both namespace
+      // bodies (namespace_definition's body is declaration_list, itself
+      // just '{' repeat(_block_item) '}') and function/statement bodies —
+      // _top_level_item and _field_declaration_list_item already allow
+      // unreal_declaration_macro (file scope and class bodies
+      // respectively), but _block_item never did, so a delegate declared
+      // inside any namespace (extremely common in real UE5.8 —
+      // Chaos::, UE::Audio::Insights::, etc.) silently produced no
+      // unreal_declaration_macro node at all.
+      prec(100, $.unreal_declaration_macro),
     ),
 
     ...preprocIf('', $ => $._top_level_item),
